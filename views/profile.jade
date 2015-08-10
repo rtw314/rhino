@@ -1,0 +1,65 @@
+extends ./index.jade
+
+block content
+   .row
+       .col-xs-4
+           p: img.img-responsive.img-rounded(src="http://placehold.it/350x350")
+           p.btn-group.btn-block
+                button.btn.btn-default.btn-lg(style="width:50%;" type="button") Message
+                button.btn.btn-primary.btn-lg(style="width:50%;" type="button") Pair
+           h3 Languages
+           ul.languages
+                li C
+                   span.badge.pull-right Expert
+                li C++
+                   span.badge.pull-right Expert
+                li Fortran
+                   span.badge.pull-right Beginner
+                li Javascript
+                   span.badge.pull-right Newb
+                li HTML
+                   span.badge.pull-right Newb
+           h3 Workflow
+           ul
+                li Editors: Vim
+                li Source Control: Git
+                li Browser: Chrome
+                li OS: Mac OS X
+       .col-xs-8
+           h1 John Doe
+
+           .panel.panel-default
+               .panel-heading Interests
+               .panel-body
+                  p I want to program a compiler that is really sweet. Then make a WOW clone, but much better. After that create an OS from scratch that is like OS X but also has Windows 10 components. Then I will create an AI that is like the girl from "Her", but actually hot.
+           .panel.panel-default
+               .panel-heading Hours Available
+               .panel-body
+                   table.hours
+                        tr
+                            th.dow
+                            - for (var y = 0; y < 24; y++)
+                                if (y%3==0)
+                                    th.cell(colspan="3" class= (y%3==0)?"cell-mark":"")
+                                        | #{y}:00
+                        - for (day of ['Su', 'M', 'T', 'W', 'Th', 'F', 'Sa'])
+                            tr
+                               td.dow #{day}
+                               - for (var y = 0; y < 24; y++)
+                                 td.cell(class= (y%3==0)?"cell-mark":"")
+
+           .panel.panel-primary
+               .panel-heading Contact Info
+               .panel-body
+                   ul
+                      li Twitter:
+                         a(href="#")  @john
+                      li  Facebook:
+                         a(href="#")  facebook.com/john
+                      li  Linkedin:
+                         a(href="#")  linkedin.com/user/john
+                      li  Homepage:
+                         a(href="#")  john.com
+
+
+                    

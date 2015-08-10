@@ -4,7 +4,7 @@ var app = express();
 app.set('view engine', 'jade');
 app.set('views', './views')
 app.get('/', function (req, res) {
-    res.render('index', { title: 'Hey', message: 'Hello there!'});
+    res.render('profile', { title: 'Hey', message: 'Hello there!'});
 });
 app.use(express.static('static'))
 
