@@ -1,32 +1,26 @@
 extends ./index.jade
 
+block title
+   | #{first_name} #{last_name}
+
 block content
    .row
        .col-xs-4
-           p: img.img-responsive.img-rounded(src="http://placehold.it/350x350")
+           p: img.img-responsive.img-rounded(src=user_pic)
            p.btn-group.btn-block
                 button.btn.btn-default.btn-lg(style="width:50%;" type="button") Message
                 button.btn.btn-primary.btn-lg(style="width:50%;" type="button") Pair
-           h3 Languages
-           ul.languages
-                li C
-                   span.badge.pull-right Expert
-                li C++
-                   span.badge.pull-right Expert
-                li Fortran
-                   span.badge.pull-right Beginner
-                li Javascript
-                   span.badge.pull-right Newb
-                li HTML
-                   span.badge.pull-right Newb
+           h3 Skills
+           ul.skills
+               - for(var skill in skills)
+                li #{skill}
+                   span.badge.pull-right #{skills[skill]}
            h3 Workflow
-           ul
-                li Editors: Vim
-                li Source Control: Git
-                li Browser: Chrome
-                li OS: Mac OS X
+           ul.workflow
+               - for(var flow in workflow)
+                li #{flow}: #{workflow[flow]}
        .col-xs-8
-           h1 John Doe
+           h1 #{first_name} #{last_name}
 
            .panel.panel-default
                .panel-heading Interests
@@ -45,21 +39,26 @@ block content
                         - for (day of ['Su', 'M', 'T', 'W', 'Th', 'F', 'Sa'])
                             tr
                                td.dow #{day}
-                               - for (var y = 0; y < 24; y++)
-                                 td.cell(class= (y%3==0)?"cell-mark":"")
+                               - for (var hour = 0; hour < 24; hour++)
+                                 - var cl = ""
+                                 - if(hours[day] && hours[day].indexOf(hour) >= 0) {cl = 'uavail'}
+                                 td.cell(class= (hour==0)?"cell-mark":"" class= cl)
 
            .panel.panel-primary
                .panel-heading Contact Info
                .panel-body
                    ul
-                      li Twitter:
-                         a(href="#")  @john
-                      li  Facebook:
-                         a(href="#")  facebook.com/john
-                      li  Linkedin:
-                         a(href="#")  linkedin.com/user/john
-                      li  Homepage:
-                         a(href="#")  john.com
+                      li Twitter: 
+                         a(href="//twitter.com/#{contact.twitter}")
+                             | #{contact.twitter}
+                      li  Facebook: 
+                         a(href="//facebook.com/#{contact.facebook}")
+                             | facebook.com/#{contact.facebook}
+                      li  Linkedin: 
+                         a(href="//linkedin.com/in/#{contact.linkedin}")
+                             | linkedin.com/in/#{contact.linkedin}
+                      li  Homepage: 
+                         a(href="#{contact.homepage}")   #{contact.homepage}
 
 
                     
