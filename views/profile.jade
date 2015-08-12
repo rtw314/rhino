@@ -42,7 +42,7 @@ block content
                                - for (var hour = 0; hour < 24; hour++)
                                  - var cl = ""
                                  - if(hours[day] && hours[day].indexOf(hour) >= 0) {cl = 'uavail'}
-                                 td.cell(class= (hour==0)?"cell-mark":"" class= cl)
+                                 td.cell(class= (hour%3==0)?"cell-mark":"" class= cl)
 
            .panel.panel-primary
                .panel-heading Contact Info
