@@ -36,7 +36,7 @@ $(document).ready(function() {
 					startTD = enteredTD;
 				}
 				if (betweenTD > 0) {
-					for (var i = startTD; i < (startTD + betweenTD); i++) {
+					for (var i = startTD; i <= (startTD + betweenTD); i++) {
 						if (toggleStatus) {
 							$(this).parent().children().eq(i).removeClass('vavail');
 						} else {
