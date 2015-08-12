@@ -25,7 +25,7 @@ block content
            .panel.panel-default
                .panel-heading Interests
                .panel-body
-                  p I want to program a compiler that is really sweet. Then make a WOW clone, but much better. After that create an OS from scratch that is like OS X but also has Windows 10 components. Then I will create an AI that is like the girl from "Her", but actually hot.
+                  p #{interests}
            .panel.panel-default
                .panel-heading Hours Available
                .panel-body
@@ -48,17 +48,21 @@ block content
                .panel-heading Contact Info
                .panel-body
                    ul
-                      li Twitter: 
-                         a(href="//twitter.com/#{contact.twitter}")
-                             | #{contact.twitter}
-                      li  Facebook: 
-                         a(href="//facebook.com/#{contact.facebook}")
-                             | facebook.com/#{contact.facebook}
-                      li  Linkedin: 
-                         a(href="//linkedin.com/in/#{contact.linkedin}")
-                             | linkedin.com/in/#{contact.linkedin}
-                      li  Homepage: 
-                         a(href="#{contact.homepage}")   #{contact.homepage}
+                      if contact.twitter
+                        li Twitter: 
+                            a(href="//twitter.com/#{contact.twitter}")
+                                | #{contact.twitter}
+                      if contact.facebook
+                        li  Facebook: 
+                            a(href="//facebook.com/#{contact.facebook}")
+                                | facebook.com/#{contact.facebook}
+                      if contact.linkedin
+                        li  Linkedin: 
+                            a(href="//linkedin.com/in/#{contact.linkedin}")
+                                | linkedin.com/in/#{contact.linkedin}
+                      if contact.homepage
+                        li  Homepage: 
+                            a(href="#{contact.homepage}")   #{contact.homepage}
 
 
                     
