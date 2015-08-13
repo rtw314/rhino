@@ -21,6 +21,8 @@ $(document).ready(function() {
 
         clickedTD = $(this).prevAll().length;
         clickedTR = $(this).parent().prevAll().length;
+        lastTDR = clickedTD;
+        lastTDL = clickedTD;
         if (clickedTD > 0 && clickedTR > 0) {
             isHeld = true;
             toggleStatus = $(this).hasClass('vavail');
@@ -52,7 +54,8 @@ $(document).ready(function() {
                         $(this).parent().children().eq(i).removeClass('vavail');
                     }
                 } 
-            } else if (lastTDL < enteredTD && enteredTD <= clickedTD && enteredTR == clickedTR) {
+            } 
+            if (lastTDL < enteredTD && enteredTD <= clickedTD && enteredTR == clickedTR) {
                 for (var j = lastTDL; j <= enteredTD; j++) {
                     if (clickedTD != j) {
                         $(this).parent().children().eq(j).removeClass('vavail');
