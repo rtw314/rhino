@@ -36,7 +36,7 @@ block content
                                 if (y%3==0)
                                     th.cell(colspan="3" class= (y%3==0)?"cell-mark":"")
                                         | #{y}:00
-                        - for (day of ['Su', 'M', 'T', 'W', 'Th', 'F', 'Sa'])
+                        - for (day of ['M', 'T', 'W', 'Th', 'F', 'Sa', 'Su'])
                             tr
                                td.dow #{day}
                                - for (var hour = 0; hour < 24; hour++)
